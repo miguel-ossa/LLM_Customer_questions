@@ -2,8 +2,9 @@ import cohere
 from cohere.responses.classify import Example
 import pprint
 import json
+import os
 
-co = cohere.Client('SLcKOzefzABDgo4fUp4QnVFpOZZPdnMcflbFOasu')
+co = cohere.Client(os.environ.get('COHERE_API_KEY'))
 
 examples=[
   Example("How do I find my insurance policy?", "Finding policy details"),
